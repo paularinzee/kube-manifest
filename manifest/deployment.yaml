@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: node-app
 spec:
   selector:
     matchLabels:
-      app: myapp
+      app: node-app
   replicas: 2
   template:
     metadata:
       labels:
-        app: myapp
+        app: node-app
     spec:
       containers:
       - name: myapp
-        image: paularinze/reddit-clone:build-12
+        image: paularinze/node-app:build-12
         ports:
         - containerPort: 80
